@@ -11,7 +11,8 @@ class QuotesSpide(scrapy.Spider):
             for quotes in response.css('div.quote'):
                yield{
                    'text':quotes.css('span.text::text').get(),
-                   'author': quotes.css('small.author::text').get(),
+                   'text2': quotes.css('span.text::text').get(),
+                   'author3': quotes.css('small.author::text').get(),
                    'tags': quotes.css('div.tags a.tag::text').getall()
                }
 
